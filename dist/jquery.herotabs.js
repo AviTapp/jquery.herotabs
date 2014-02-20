@@ -1,14 +1,15 @@
 /*!
  * jquery.herotabs
- * version 1.2.1
+ * version 1.2.3
  * Requires jQuery 1.7.0 or higher
  * https://github.com/simonsmith/jquery.herotabs/
  * @blinkdesign
  */
-
 !function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        factory(require('jquery'));
     } else {
         factory(root.jQuery);
     }
@@ -125,11 +126,13 @@
                 currentTab
                     .one(transitionProps.js, function() {
                         self._setTabVisibilty(tabToShow, currentTab);
+                        self.triggerEvent('herotabs.hide', currentTab);
                     });
             } else {
                 // If duration is 0s, this needs to be called manually
                 // as transitionend does not fire
                 self._setTabVisibilty(tabToShow, currentTab);
+                self.triggerEvent('herotabs.hide', currentTab);
             }
 
             // Trigger the animation

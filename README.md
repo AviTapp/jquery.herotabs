@@ -1,4 +1,4 @@
-# jQuery Herotabs
+# jQuery Herotabs [![Build Status](https://travis-ci.org/simonsmith/jquery.herotabs.png?branch=master)](https://travis-ci.org/simonsmith/jquery.herotabs)
 
 A tiny ( **1.2k gzipped** ), fully accessible tab switcher for jQuery.
 
@@ -25,6 +25,10 @@ http://jsfiddle.net/Blink/cWMY9/show (Easier to use)
 Quickest way is to [grab it via Bower](http://bower.io)
 
 `bower install jquery.herotabs --save`
+
+Or from npm
+
+`npm install jquery.herotabs --save`
 
 Failing that, simply clone this repo or [grab the file itself](https://raw.github.com/simonsmith/jquery.herotabs/master/dist/jquery.herotabs.js).
 
@@ -161,6 +165,9 @@ $tabs.on('herotabs.show', function(event, tab) {
 ### herotabs.show
 Fired when a tab is shown
 
+### herotabs.hide
+Fired when the current tab is hidden
+
 ### herotabs.next
 Fired when the next tab is shown
 
@@ -278,23 +285,10 @@ Sites using Herotabs
 * [Gardener's World](http://gardenersworld.com) 
 * [Sinfini Music](http://sinfinimusic.com/uk/charts/)
 
-
-
 ## Contributing
 If you find a bug or need a feature added, please open an issue first.
 
 ### Running the tests
 
-Check out the repo into a directory
-
-`git clone git@github.com:simonsmith/jquery.herotabs.git`
-
-Install the test dependencies with [Bower](http://bower.io)
-
-`bower install --dev`
-
-This will create a `components` directory containing Jasmine and other assets. 
-
-Now run the `tests/index.html` page on a server. 
-
-**Tip** On mac you can use `python -m SimpleHTTPServer`
+    npm install
+    npm test
